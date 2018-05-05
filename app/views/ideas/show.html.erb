@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h3>
+  <%= @idea.name %>
+</h3>
+
+<p>
+  <strong>Description:</strong>
+  <%= @idea.description %>
+</p>
+
+<p>
+
+  <%= image_tag(@idea.picture_url, width: 300) if @idea.picture.present? %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @idea.owner %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%=  '🌟' * @idea.rating %>
+</p>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
